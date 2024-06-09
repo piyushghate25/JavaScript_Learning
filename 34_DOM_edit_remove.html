@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Piyush Ghate</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    //Method 1 Basic
+    function addLanguage (langName) {
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("Python")
+    addLanguage("Typescript")
+
+    //Method 2 Advance
+
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        // const newLang = document.createTextNode(langName)
+        // li.appendChild(newLang)
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage("C")
+
+    // Edit
+    // Method 1
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML = "Mojo"  
+    const newLi = document.createElement('li')
+    newLi.appendChild(document.createTextNode("Mojo")) 
+    secondLang.replaceWith(newLi)
+ 
+    // Method 2
+
+    const thirdLang = document.querySelector("li:nth-child(3)")
+    const newLi2 = document.createElement('li')
+    newLi2.textContent = "C++"
+    thirdLang.replaceWith(newLi2)
+
+    // Remove 
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+
+    const removeSecond = document.querySelector("li:nth-child(2)")
+    removeSecond.remove()
+                                                                
+</script>
+</html>
