@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TO Know time click on start and to stop it click on stop</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayTime = function(){
+    let date = new Date();
+    document.querySelector('h1').innerHTML = date.toLocaleTimeString()
+   }
+
+   let display; 
+
+   document.querySelector('#start').addEventListener('click',function(){
+    display = setInterval(sayTime,1000);
+   })
+
+   document.querySelector('#stop').addEventListener('click',function(){
+    clearInterval(display);
+   })
+
+</script>
+</html>
